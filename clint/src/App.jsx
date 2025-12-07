@@ -7,6 +7,8 @@ import Personal from './pages/Personal';
 import Lender from './pages/Lender';
 import PlatfromManager from './pages/PlatfromManager';
 import MyTask from './pages/MyTask';
+import Loans from './pages/Loans';
+import Landing from './pages/Landing'; // 👈 NEW
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
@@ -16,9 +18,15 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
   return (
     <Routes>
+      {/* Public Landing Page */}
+      <Route path="/" element={<Landing />} />
+
+      {/* Public Login */}
       <Route path="/login" element={<Login />} />
+
+      {/* Protected Routes */}
       <Route
-        path="/"
+        path="/dashboard"
         element={
           <ProtectedRoute>
             <Home />
@@ -42,10 +50,10 @@ const App = () => {
         }
       />
       <Route
-        path="/lender"
+        path="/loans"
         element={
           <ProtectedRoute>
-            <Lender />
+            <Loans />
           </ProtectedRoute>
         }
       />
@@ -57,6 +65,9 @@ const App = () => {
           </ProtectedRoute>
         }
       />
+
+      {/* Optional: unknown routes → landing */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

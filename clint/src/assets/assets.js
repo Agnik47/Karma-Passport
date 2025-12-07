@@ -77,83 +77,32 @@ export const mockUserData = {
     { date: "2025-12-06", score: 78, riskCategory: "low" },
   ],
 
-  taskHistory: [
-    {
-      id: "TASK-001",
-      title: "React Component Development",
-      company: "TechCorp Solutions",
-      description: "Build 5 reusable React components",
-      status: "verified",
-      hoursWorked: 6,
-      ratedAmount: 80,
-      rating: 5.0,
-      verifiedAt: "2025-12-05T16:30:00Z",
-      completedAt: "2025-12-04T18:00:00Z",
+    agentScores: {
+      workFrequencyAgent: {
+        name: "Work Frequency Agent",
+        score: 88,
+        description: "Consistent task completion pattern",
+        weight: 25,
+      },
+      taskSuccessRateAgent: {
+        name: "Task Success Rate Agent",
+        score: 92,
+        description: "High completion and approval rate",
+        weight: 30,
+      },
+      repaymentHistoryAgent: {
+        name: "Repayment History Agent",
+        score: 72,
+        description: "On-time repayment record",
+        weight: 25,
+      },
+      walletActivityAgent: {
+        name: "Wallet Activity Agent",
+        score: 79,
+        description: "Healthy transaction patterns",
+        weight: 20,
+      },
     },
-    {
-      id: "TASK-002",
-      title: "UI/UX Design Mockup",
-      company: "ChainLabs",
-      description: "Design landing page mockup",
-      status: "verified",
-      hoursWorked: 4,
-      ratedAmount: 60,
-      rating: 4.8,
-      verifiedAt: "2025-12-03T12:00:00Z",
-      completedAt: "2025-12-02T20:00:00Z",
-    },
-    {
-      id: "TASK-003",
-      title: "Smart Contract Testing",
-      company: "Web3 Innovations",
-      description: "Test and document smart contracts",
-      status: "verified",
-      hoursWorked: 8,
-      ratedAmount: 120,
-      rating: 4.6,
-      verifiedAt: "2025-11-30T10:00:00Z",
-      completedAt: "2025-11-28T17:00:00Z",
-    },
-    {
-      id: "TASK-004",
-      title: "API Documentation",
-      company: "DataFlow Systems",
-      description: "Write comprehensive API docs",
-      status: "verified",
-      hoursWorked: 5,
-      ratedAmount: 70,
-      rating: 4.9,
-      verifiedAt: "2025-11-25T14:00:00Z",
-      completedAt: "2025-11-24T19:00:00Z",
-    },
-  ],
-
-  agentScores: {
-    workFrequencyAgent: {
-      name: "Work Frequency Agent",
-      score: 88,
-      description: "Consistent task completion pattern",
-      weight: 25,
-    },
-    taskSuccessRateAgent: {
-      name: "Task Success Rate Agent",
-      score: 92,
-      description: "High completion and approval rate",
-      weight: 30,
-    },
-    repaymentHistoryAgent: {
-      name: "Repayment History Agent",
-      score: 72,
-      description: "On-time repayment record",
-      weight: 25,
-    },
-    walletActivityAgent: {
-      name: "Wallet Activity Agent",
-      score: 79,
-      description: "Healthy transaction patterns",
-      weight: 20,
-    },
-  },
 
   chartData: {
     scoreProgression: [
@@ -182,56 +131,6 @@ export const mockUserData = {
       { category: "High Risk", percentage: 5, color: "#ef4444" },
     ],
   },
-
-  // NEWLY MERGED SECTION ↓↓↓
-  workProofSubmissions: [
-    {
-      id: "PROOF-001",
-      title: "React Component Library",
-      description:
-        "Built 5 reusable components (Button, Card, Input, Modal, Alert)",
-      platform: "Upwork",
-      numberOfTasks: 5,
-      totalHours: 8,
-      attachmentUrl: "https://github.com/agnik/react-components",
-      averageRating: 4.8,
-      shiftDetails: "Evening peak hours (6PM - 2AM IST)",
-      submittedAt: "2025-12-06T14:30:00Z",
-      status: "verified",
-      companyApprovalAt: "2025-12-06T16:45:00Z",
-      karmaPointsEarned: 45,
-    },
-    {
-      id: "PROOF-002",
-      title: "Smart Contract Testing",
-      description: "Complete test suite for ERC-20 token contract",
-      platform: "Fiverr",
-      numberOfTasks: 1,
-      totalHours: 6,
-      attachmentUrl: "https://github.com/agnik/contract-tests",
-      averageRating: 5.0,
-      shiftDetails: "Night shift hours (10PM - 4AM IST)",
-      submittedAt: "2025-12-05T22:15:00Z",
-      status: "verified",
-      companyApprovalAt: "2025-12-06T08:30:00Z",
-      karmaPointsEarned: 38,
-    },
-    {
-      id: "PROOF-003",
-      title: "UI Design Mockup",
-      description: "Dashboard design in Figma for DeFi application",
-      platform: "Freelancer",
-      numberOfTasks: 1,
-      totalHours: 4,
-      attachmentUrl: "https://figma.com/mockup/dashboard",
-      averageRating: 4.6,
-      shiftDetails: "Flexible hours",
-      submittedAt: "2025-12-04T18:20:00Z",
-      status: "pending",
-      companyApprovalAt: null,
-      karmaPointsEarned: 0,
-    },
-  ],
 };
 
 export const mockTaskData = {
@@ -406,4 +305,24 @@ export const mockTaskData = {
       affectsKarma: false,
     },
   ],
+};
+
+export const mockLoanData = {
+  tier: "Gold", // Bronze | Silver | Gold | Platinum
+  karmaScore: 78,
+  baseCurrency: "₹",
+  maxApprovalLimit: 15000,
+  minLoanAmount: 1000,
+  recommendedAmount: 7000,
+  minDurationDays: 15,
+  maxDurationDays: 90,
+  availableDurations: [15, 30, 45, 60, 90],
+  // interest ranges based on karma
+  interestConfig: {
+    highScoreRate: 2.2, // monthly
+    midScoreRate: 3.2,
+    lowScoreRate: 4.5,
+  },
+  activeLoansCount: 1,
+  maxActiveLoansAllowed: 2,
 };

@@ -373,7 +373,8 @@ const MyTask = () => {
                 Example future API:
                 <br />
                 <span className="font-mono bg-slate-100 px-2 py-1 rounded mt-1 inline-block">
-                  GET /tasks?status={"{status"}}
+                  GET /tasks?status={"{"}
+                  {"{"}status{"}"}
                 </span>
               </p>
             </div>

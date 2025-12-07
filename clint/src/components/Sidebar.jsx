@@ -1,6 +1,5 @@
 // src/components/Sidebar.jsx
 
-import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { mockUserData } from '../assets/assets';
 
@@ -9,7 +8,7 @@ const Sidebar = () => {
 
   const menuItems = {
     worker: [
-      { label: 'Dashboard', path: '/', icon: '📊' },
+      { label: 'Dashboard', path: '/dashboard', icon: '📊' },
       { label: 'Submit Work', path: '/submit-work', icon: '📝' },
       { label: 'My Tasks', path: '/my-tasks', icon: '✅' },
       { label: 'Loans', path: '/loans', icon: '💰' },

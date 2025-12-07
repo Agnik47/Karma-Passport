@@ -42,7 +42,7 @@ const Login = () => {
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('isAuthenticated', 'true');
     
-    navigate('/');
+    navigate('/dashboard');
   };
 
   return (

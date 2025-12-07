@@ -18,7 +18,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('isAuthenticated');
-    navigate('/login');
+    navigate('/');
   };
 
   if (!user) return null;
