@@ -194,7 +194,7 @@ const LogDeliveryProofModal = ({ isOpen, onClose, onSubmit }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b border-slate-200">
           <div className="flex justify-between items-center">
@@ -304,7 +304,7 @@ const LogDeliveryProofModal = ({ isOpen, onClose, onSubmit }) => {
               name="attachmentUrl"
               value={formData.attachmentUrl}
               onChange={handleChange}
-              placeholder="GitHub or proof link"
+              placeholder="proof link "
               className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
